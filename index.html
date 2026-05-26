@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Studio — Дизайн интерьеров и комплектация</title>
+<meta name="description" content="AP Studio — дизайн интерьеров, ремонт под ключ, итальянская мебель, межкомнатные двери. Варна, Болгария.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F5F3EF;
+    --bg2: #EDEAE4;
+    --bg3: #E4E0D8;
+    --text: #1A1A1A;
+    --text2: #6B6760;
+    --text3: #9C9890;
+    --gold: #B8975A;
+    --gold2: #8B7043;
+    --white: #FFFFFF;
+    --border: rgba(26,26,26,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-lang {
+    display: flex;
+    gap: 6px;
+  }
+  .lang-btn {
+    font-size: 11px;
+    padding: 4px 9px;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.15s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  .nav-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+  }
+  .nav-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--text);
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 88vh;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .hero-left {
+    padding: 80px 48px 80px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    border-right: 0.5px solid var(--border);
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-size: 52px;
+    line-height: 1.1;
+    color: var(--text);
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--text2);
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text2);
+    max-width: 400px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .btn-primary {
+    padding: 13px 30px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold2); }
+
+  .btn-outline {
+    padding: 13px 30px;
+    background: transparent;
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 0.5px solid var(--text);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-outline:hover { background: var(--bg2); }
+
+  .hero-right {
+    background: var(--bg2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-visual {
+    text-align: center;
+    color: var(--text3);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-room-mock {
+    width: 280px;
+    height: 260px;
+    border: 0.5px solid var(--border);
+    background: var(--white);
+    position: relative;
+    margin: 0 auto 20px;
+    overflow: hidden;
+  }
+  .room-wall { position: absolute; top: 0; left: 0; right: 0; height: 55%; background: #EDE8E0; }
+  .room-floor { position: absolute; bottom: 0; left: 0; right: 0; height: 45%; background: var(--bg3); }
+  .room-sofa {
+    position: absolute;
+    bottom: 44%;
+    left: 30px; right: 30px;
+    height: 60px;
+    background: #C8BBA8;
+  }
+  .room-sofa-back {
+    position: absolute;
+    top: -22px; left: 0; right: 0;
+    height: 24px;
+    background: #B5A896;
+  }
+  .room-lamp {
+    position: absolute;
+    top: 24px; right: 40px;
+    width: 2px; height: 70px;
+    background: var(--gold);
+  }
+  .room-lamp::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -14px;
+    width: 30px; height: 16px;
+    border-radius: 50% 50% 0 0;
+    background: var(--gold);
+  }
+  .room-tag {
+    position: absolute;
+    bottom: 12px; left: 16px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+  }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .stat {
+    padding: 32px 24px;
+    text-align: center;
+    border-right: 0.5px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    color: var(--text);
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-top: 6px;
+  }
+
+  /* SECTIONS */
+  section { padding: 72px 48px; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .section-title { font-size: 34px; }
+  .section-link {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .section-link:hover { color: var(--gold2); }
+
+  /* SERVICES */
+  #services { border-bottom: 0.5px solid var(--border); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 0.5px solid var(--border);
+  }
+  .service-item {
+    padding: 28px 20px;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    cursor: default;
+    transition: background 0.2s;
+  }
+  .service-item:hover { background: var(--white); }
+  .service-item:nth-child(5n) { border-right: none; }
+  .service-item:nth-last-child(-n+5) { border-bottom: none; }
+  .service-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--gold);
+  }
+  .service-name {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .service-desc { font-size: 11px; color: var(--text3); line-height: 1.5; }
+
+  /* PORTFOLIO */
+  #portfolio { border-bottom: 0.5px solid var(--border); background: var(--bg); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+  .p-item {
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .p-item.tall { grid-row: span 2; min-height: 520px; }
+  .p-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s ease;
+  }
+  .p-item:hover .p-bg { transform: scale(1.04); }
+  .p-bg-1 { background: linear-gradient(160deg, #D4C9B8, #A89880); }
+  .p-bg-2 { background: linear-gradient(160deg, #C5BDB3, #8E8479); }
+  .p-bg-3 { background: linear-gradient(160deg, #BFC4C8, #7B858D); }
+  .p-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+  }
+  .p-tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+  .p-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #fff;
+  }
+  .p-meta { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+  .p-corner {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 50px; height: 50px;
+    border: 0.5px solid rgba(255,255,255,0.3);
+  }
+
+  /* ADVANTAGES */
+  #advantages {
+    background: var(--text);
+    padding: 72px 48px;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  }
+  #advantages .section-title { color: var(--bg); }
+  #advantages .section-eyebrow { color: var(--gold); }
+  .adv-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    margin-top: 40px;
+  }
+  .adv-item { background: var(--text); padding: 32px 24px; }
+  .adv-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .adv-title { font-size: 13px; color: var(--bg); margin-bottom: 8px; }
+  .adv-desc { font-size: 11px; color: var(--text3); line-height: 1.65; }
+
+  /* DOORS */
+  #doors { border-bottom: 0.5px solid var(--border); }
+  .doors-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 7px 16px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.15s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+  .doors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+  .door-card {
+    background: var(--white);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .door-card:hover { background: var(--bg); }
+  .door-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .door-svg-wrap { transition: transform 0.5s ease; }
+  .door-card:hover .door-svg-wrap { transform: scale(1.04); }
+  .door-info { padding: 18px 20px; }
+  .door-collection {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .door-name { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .door-spec { font-size: 11px; color: var(--text3); line-height: 1.5; }
+  .door-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+  .door-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+    border: 0.5px solid var(--border);
+    color: var(--text3);
+  }
+  .door-price {
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 10px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  /* FURNITURE */
+  #furniture { border-bottom: 0.5px solid var(--border); background: var(--bg2); }
+  .furniture-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .furniture-card {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    padding: 24px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .furniture-card:hover { background: var(--bg); }
+  .furniture-icon { font-size: 26px; color: var(--gold); margin-bottom: 14px; }
+  .furniture-name { font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .furniture-desc { font-size: 12px; color: var(--text3); line-height: 1.6; }
+  .furniture-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+
+  /* ABOUT */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 0.5px solid var(--border);
+    padding: 0;
+  }
+  .about-left {
+    padding: 72px 48px;
+    border-right: 0.5px solid var(--border);
+  }
+  .about-right {
+    padding: 72px 48px;
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 28px;
+  }
+  .about-stat {
+    background: var(--white);
+    padding: 24px 20px;
+  }
+  .about-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold);
+  }
+  .about-stat-label { font-size: 11px; color: var(--text2); margin-top: 4px; }
+  .factories-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .factory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 13px;
+  }
+  .factory-name { color: var(--text); }
+  .factory-country { font-size: 11px; color: var(--text3); }
+
+  /* CONTACT */
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .contact-left {
+    padding: 72px 48px;
+    border-right: 0.5px solid var(--border);
+  }
+  .contact-right { padding: 72px 48px; }
+  .contact-info { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text2);
+    text-decoration: none;
+  }
+  .contact-row:hover { color: var(--text); }
+  .contact-icon { font-size: 16px; color: var(--gold); width: 20px; }
+
+  .form-title { font-size: 18px; margin-bottom: 24px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { margin-bottom: 16px; }
+  .form-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 7px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 0.5px solid var(--border);
+    background: var(--white);
+    font-size: 13px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-textarea { resize: none; }
+  .btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+    margin-top: 4px;
+  }
+  .btn-submit:hover { background: var(--gold2); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--bg);
+    letter-spacing: 0.14em;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--bg); }
+  .footer-copy { font-size: 11px; color: var(--text3); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links, .nav-lang { display: none; }
+    .nav-menu-btn { display: flex; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 48px 20px; }
+    .hero-title { font-size: 36px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 48px 20px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-item:nth-child(5n) { border-right: 0.5px solid var(--border); }
+    .service-item:nth-child(2n) { border-right: none; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .p-item.tall { grid-row: span 1; min-height: 260px; }
+    .adv-grid { grid-template-columns: 1fr 1fr; }
+    #advantages { padding: 48px 20px; }
+    .doors-grid { grid-template-columns: 1fr 1fr; }
+    .furniture-grid { grid-template-columns: 1fr 1fr; }
+    #about { grid-template-columns: 1fr; }
+    .about-left { padding: 48px 20px; border-right: none; border-bottom: 0.5px solid var(--border); }
+    .about-right { padding: 48px 20px; }
+    #contact { grid-template-columns: 1fr; }
+    .contact-left { padding: 48px 20px; border-right: none; border-bottom: 0.5px solid var(--border); }
+    .contact-right { padding: 48px 20px; }
+    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-links { flex-wrap: wrap; gap: 16px; }
+  }
+
+  @media (max-width: 500px) {
+    .doors-grid, .adv-grid, .furniture-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">AP <span>Studio</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#portfolio">Портфолио</a></li>
+    <li><a href="#doors">Двери</a></li>
+    <li><a href="#furniture">Мебель</a></li>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active">RU</button>
+    <button class="lang-btn">UA</button>
+    <button class="lang-btn">EN</button>
+    <button class="lang-btn">BG</button>
+  </div>
+  <button class="nav-menu-btn" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Дизайн · Комплектация · Производство</div>
+    <h1 class="hero-title">Пространство,<br>которое говорит<br><em>о вас</em></h1>
+    <p class="hero-desc">Создаём интерьеры под ключ — от авторского дизайна до поставки итальянской мебели и отделочных материалов напрямую с фабрик.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Оставить заявку</a>
+      <a href="#doors" class="btn-outline">Каталог дверей</a>
+      <a href="#portfolio" class="btn-outline">Портфолио</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-room-mock">
+        <div class="room-wall"></div>
+        <div class="room-floor"></div>
+        <div class="room-sofa"><div class="room-sofa-back"></div></div>
+        <div class="room-lamp"></div>
+        <div class="room-tag">Проект · Варна, 2024</div>
+      </div>
+      <div style="font-size:11px;letter-spacing:0.1em;color:var(--text3);">AP Studio · Interior Design</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">120+</div><div class="stat-label">Реализованных проектов</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">Лет на рынке</div></div>
+  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Фабрик-партнёров</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Страны присутствия</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">Что мы делаем</div>
+      <h2 class="section-title">Полный цикл — от идеи до ключа</h2>
+    </div>
+    <a href="#contact" class="section-link">Обсудить проект →</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-item">
+      <div class="service-icon">✏</div>
+      <div class="service-name">Дизайн интерьера</div>
+      <div class="service-desc">Авторский проект с 3D-визуализацией</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🔧</div>
+      <div class="service-name">Ремонт под ключ</div>
+      <div class="service-desc">Контроль на каждом этапе</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🪑</div>
+      <div class="service-name">Корпусная мебель</div>
+      <div class="service-desc">Собственное производство</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🚪</div>
+      <div class="service-name">Межкомнатные двери</div>
+      <div class="service-desc">Широкий каталог, установка</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🛡</div>
+      <div class="service-name">Бронированные двери</div>
+      <div class="service-desc">Европейские производители</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🛋</div>
+      <div class="service-name">Итальянская мебель</div>
+      <div class="service-desc">Поставка с фабрик напрямую</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">💡</div>
+      <div class="service-name">Свет</div>
+      <div class="service-desc">Дизайнерские светильники</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🚿</div>
+      <div class="service-name">Сантехника</div>
+      <div class="service-desc">Премиальные бренды</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">🌿</div>
+      <div class="service-name">Декор</div>
+      <div class="service-desc">Финальный стайлинг объекта</div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">📦</div>
+      <div class="service-name">Комплектация объектов</div>
+      <div class="service-desc">Оптовые и фабричные цены</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">Наши работы</div>
+      <h2 class="section-title">Портфолио</h2>
+    </div>
+    <a href="#contact" class="section-link">Все проекты →</a>
+  </div>
+  <div class="portfolio-grid">
+    <div class="p-item tall">
+      <div class="p-bg p-bg-1"></div>
+      <div class="p-corner"></div>
+      <div class="p-label">
+        <div class="p-tag">Квартира · 120 м²</div>
+        <div class="p-name">Апартаменты в минимализме</div>
+        <div class="p-meta">Варна · 2024 · Итальянская мебель</div>
+      </div>
+    </div>
+    <div class="p-item">
+      <div class="p-bg p-bg-2"></div>
+      <div class="p-label">
+        <div class="p-tag">Пентхаус · 200 м²</div>
+        <div class="p-name">Современная классика</div>
+        <div class="p-meta">София · 2023</div>
+      </div>
+    </div>
+    <div class="p-item">
+      <div class="p-bg p-bg-3"></div>
+      <div class="p-label">
+        <div class="p-tag">Вилла · 350 м²</div>
+        <div class="p-name">Средиземноморский стиль</div>
+        <div class="p-meta">Несебр · 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section id="advantages">
+  <div class="section-eyebrow">Почему AP Studio</div>
+  <h2 class="section-title">Наши преимущества</h2>
+  <div class="adv-grid">
+    <div class="adv-item">
+      <div class="adv-num">01</div>
+      <div class="adv-title">Работа напрямую с фабриками</div>
+      <div class="adv-desc">Оптовые цены без посредников на мебель, свет и материалы</div>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">02</div>
+      <div class="adv-title">Полная комплектация</div>
+      <div class="adv-desc">Берём на себя весь объект — от дизайна до последней ручки</div>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">03</div>
+      <div class="adv-title">Авторский подход</div>
+      <div class="adv-desc">Каждый проект — уникальная концепция под клиента</div>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">04</div>
+      <div class="adv-title">Европейские поставщики</div>
+      <div class="adv-desc">Италия, Германия, Австрия — только сертифицированные партнёры</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOORS -->
+<section id="doors">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">Каталог</div>
+      <h2 class="section-title">Межкомнатные двери</h2>
+    </div>
+    <a href="#contact" class="section-link">Запросить каталог →</a>
+  </div>
+  <div class="doors-filter">
+    <button class="filter-btn active" onclick="filterDoors(this,'all')">Все коллекции</button>
+    <button class="filter-btn" onclick="filterDoors(this,'concealed')">Скрытые</button>
+    <button class="filter-btn" onclick="filterDoors(this,'west')">West</button>
+    <button class="filter-btn" onclick="filterDoors(this,'flat')">Flat</button>
+    <button class="filter-btn" onclick="filterDoors(this,'classic')">Classic Loft</button>
+    <button class="filter-btn" onclick="filterDoors(this,'glass')">Стеклянные</button>
+  </div>
+  <div class="doors-grid">
+    <div class="door-card" data-coll="concealed">
+      <div class="door-img" style="background:#EDEAE4;">
+        <div class="door-svg-wrap">
+          <svg width="60" height="140" viewBox="0 0 60 140"><rect x="2" y="2" width="56" height="136" fill="#F5F3EF" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="46" cy="70" r="4" fill="#9C9890"/></svg>
+        </div>
+      </div>
+      <div class="door-info">
+        <div class="door-collection">Concealed / Optimum</div>
+        <div class="door-name">Evolushion Primer</div>
+        <div class="door-spec">Грунт под отделку · до 2700 мм · Алюм. короб</div>
+        <div class="door-tags"><span class="door-tag">В наличии</span><span class="door-tag">Скрытый</span></div>
+        <div class="door-price" onclick="openModal('Evolushion Primer')">Запросить цену →</div>
+      </div>
+    </div>
+    <div class="door-card" data-coll="west">
+      <div class="door-img" style="background:#C4BBA8;">
+        <div class="door-svg-wrap">
+          <svg width="60" height="140" viewBox="0 0 60 140"><rect x="2" y="2" width="56" height="136" fill="#C8BDA8" stroke="#9C9080" stroke-width="0.5"/><rect x="6" y="10" width="48" height="58" fill="none" stroke="#A89278" stroke-width="1"/><ellipse cx="30" cy="90" rx="20" ry="14" fill="none" stroke="#A89278" stroke-width="1"/><rect x="8" y="112" width="44" height="22" fill="none" stroke="#A89278" stroke-width="1"/><circle cx="46" cy="56" r="4" fill="#6B6760"/></svg>
+        </div>
+      </div>
+      <div class="door-info">
+        <div class="door-collection">West</div>
+        <div class="door-name">West 111</div>
+        <div class="door-spec">Итальянская эмаль · Классика · до 2400 мм</div>
+        <div class="door-tags"><span class="door-tag">RAL/NCS</span><span class="door-tag">Классика</span></div>
+        <div class="door-price" onclick="openModal('West 111')">Запросить цену →</div>
+      </div>
+    </div>
+    <div class="door-card" data-coll="flat">
+      <div class="door-img" style="background:#C0B49C;">
+        <div class="door-svg-wrap">
+          <svg width="60" height="140" viewBox="0 0 60 140"><rect x="2" y="2" width="56" height="136" fill="#C0B49C" stroke="#9C9080" stroke-width="0.5"/><line x1="2" y1="38" x2="58" y2="38" stroke="#555" stroke-width="2.5"/><line x1="2" y1="74" x2="58" y2="74" stroke="#555" stroke-width="2.5"/><line x1="2" y1="110" x2="58" y2="110" stroke="#555" stroke-width="2.5"/><circle cx="14" cy="74" r="4" fill="#6B6760"/></svg>
+        </div>
+      </div>
+      <div class="door-info">
+        <div class="door-collection">Flat</div>
+        <div class="door-name">Flat 07</div>
+        <div class="door-spec">Тауп матовый · Алюм. молдинги · до 2700 мм</div>
+        <div class="door-tags"><span class="door-tag">Алюминий</span><span class="door-tag">Минимализм</span></div>
+        <div class="door-price" onclick="openModal('Flat 07')">Запросить цену →</div>
+      </div>
+    </div>
+    <div class="door-card" data-coll="classic">
+      <div class="door-img" style="background:#DDD5C4;">
+        <div class="door-svg-wrap">
+          <svg width="60" height="140" viewBox="0 0 60 140"><rect x="2" y="2" width="56" height="136" fill="#D5CCBA" stroke="#B0A890" stroke-width="0.5"/><rect x="6" y="8" width="48" height="74" fill="none" stroke="#9C9080" stroke-width="1.2"/><rect x="10" y="12" width="40" height="66" fill="none" stroke="#9C9080" stroke-width="0.6"/><rect x="6" y="90" width="48" height="44" fill="none" stroke="#9C9080" stroke-width="1.2"/><rect x="10" y="94" width="40" height="36" fill="none" stroke="#9C9080" stroke-width="0.6"/><circle cx="46" cy="70" r="4" fill="#6B6760"/></svg>
+        </div>
+      </div>
+      <div class="door-info">
+        <div class="door-collection">Classic Loft</div>
+        <div class="door-name">Classic Loft 02</div>
+        <div class="door-spec">Итальянская эмаль · 3-уровн. фрезеровка · 2400 мм</div>
+        <div class="door-tags"><span class="door-tag">Неоклассика</span><span class="door-tag">3 уровня</span></div>
+        <div class="door-price" onclick="openModal('Classic Loft 02')">Запросить цену →</div>
+      </div>
+    </div>
+    <div class="door-card" data-coll="glass">
+      <div class="door-img" style="background:#888;">
+        <div class="door-svg-wrap">
+          <svg width="60" height="140" viewBox="0 0 60 140"><rect x="2" y="2" width="56" height="136" fill="#555" stroke="#333" stroke-width="0.5"/><rect x="18" y="2" width="24" height="136" fill="rgba(30,50,80,0.7)" stroke="#666" stroke-width="0.5"/><circle cx="14" cy="70" r="4" fill="#888"/></svg>
+        </div>
+      </div>
+      <div class="door-info">
+        <div class="door-collection">Unica / Glass</div>
+        <div class="door-name">Unica 03</div>
+        <div class="door-spec">Чёрный шпон + стекло · Зеркало графит · 2700 мм</div>
+        <div class="door-tags"><span class="door-tag">Стекло 4+4</span><span class="door-tag">Люкс</span></div>
+        <div class="door-price" onclick="openModal('Unica 03')">Запросить цену →</div>
+      </div>
+    </div>
+    <div class="door-card" data-coll="west">
+      <div class="door-img" style="background:#7A8898;">
+        <div class="door-svg-wrap">
+          <svg width="60" height="140" viewBox="0 0 60 140"><rect x="2" y="2" width="56" height="136" fill="#6E7E8E" stroke="#5A6A78" stroke-width="0.5"/><rect x="6" y="8" width="48" height="74" fill="none" stroke="#8AA0B0" stroke-width="1.2"/><rect x="10" y="12" width="40" height="66" fill="none" stroke="#8AA0B0" stroke-width="0.6"/><rect x="6" y="90" width="48" height="44" fill="none" stroke="#8AA0B0" stroke-width="1.2"/><rect x="10" y="94" width="40" height="36" fill="none" stroke="#8AA0B0" stroke-width="0.6"/><circle cx="14" cy="70" r="4" fill="#9AAAB8"/></svg>
+        </div>
+      </div>
+      <div class="door-info">
+        <div class="door-collection">West</div>
+        <div class="door-name">West 125</div>
+        <div class="door-spec">Итальянская эмаль · Зелёный · 20 мм фреза</div>
+        <div class="door-tags"><span class="door-tag">RAL/NCS</span><span class="door-tag">20 мм фреза</span></div>
+        <div class="door-price" onclick="openModal('West 125')">Запросить цену →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FURNITURE -->
+<section id="furniture">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">Итальянская мебель и комплектация</div>
+      <h2 class="section-title">Поставка напрямую с фабрик</h2>
+    </div>
+    <a href="#contact" class="section-link">Запросить каталог →</a>
+  </div>
+  <div class="furniture-grid">
+    <div class="furniture-card">
+      <div class="furniture-icon">🛋</div>
+      <div class="furniture-name">Итальянская мебель</div>
+      <div class="furniture-desc">Natuzzi, Poliform, Molteni&amp;C, Cattelan Italia, Baxter — напрямую с фабрик по оптовым ценам</div>
+      <a href="#contact" class="furniture-link">Запросить подборку →</a>
+    </div>
+    <div class="furniture-card">
+      <div class="furniture-icon">💡</div>
+      <div class="furniture-name">Свет</div>
+      <div class="furniture-desc">Дизайнерские светильники и системы освещения от европейских производителей</div>
+      <a href="#contact" class="furniture-link">Узнать цены →</a>
+    </div>
+    <div class="furniture-card">
+      <div class="furniture-icon">🚿</div>
+      <div class="furniture-name">Сантехника</div>
+      <div class="furniture-desc">Премиальная сантехника и плитка — Италия, Германия, Австрия. Оптовые условия</div>
+      <a href="#contact" class="furniture-link">Узнать цены →</a>
+    </div>
+    <div class="furniture-card">
+      <div class="furniture-icon">🎨</div>
+      <div class="furniture-name">Декор</div>
+      <div class="furniture-desc">Финальный стайлинг объекта — текстиль, аксессуары, арт-объекты, зеркала</div>
+      <a href="#contact" class="furniture-link">Узнать больше →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="about-left">
+    <div class="section-eyebrow">О компании</div>
+    <h2 class="section-title">AP Studio</h2>
+    <p style="color:var(--text2);font-size:14px;line-height:1.8;margin-top:20px;">Мы — студия дизайна и комплектации интерьеров. Работаем с частными клиентами, застройщиками, отелями и ресторанами. Наш подход — полный цикл от авторского дизайна до финального стайлинга объекта.</p>
+    <p style="color:var(--text2);font-size:14px;line-height:1.8;margin-top:14px;">Прямые контракты с более чем 50 европейскими фабриками позволяют предлагать продукцию по оптовым ценам с гарантией оригинала.</p>
+    <div class="about-stats">
+      <div class="about-stat"><div class="about-stat-num">120+</div><div class="about-stat-label">Проектов реализовано</div></div>
+      <div class="about-stat"><div class="about-stat-num">8</div><div class="about-stat-label">Лет опыта</div></div>
+      <div class="about-stat"><div class="about-stat-num">50+</div><div class="about-stat-label">Фабрик-партнёров</div></div>
+      <div class="about-stat"><div class="about-stat-num">4</div><div class="about-stat-label">Страны работы</div></div>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="section-eyebrow">Фабрики-партнёры</div>
+    <h3 style="font-size:22px;margin-bottom:4px;">С кем мы работаем</h3>
+    <div class="factories-list">
+      <div class="factory-item"><span class="factory-name">Natuzzi Italia</span><span class="factory-country">Апулия, Италия · Мягкая мебель</span></div>
+      <div class="factory-item"><span class="factory-name">Scavolini</span><span class="factory-country">Пезаро, Италия · Кухни</span></div>
+      <div class="factory-item"><span class="factory-name">Poliform</span><span class="factory-country">Бриандзо, Италия · Спальни / Гостиная</span></div>
+      <div class="factory-item"><span class="factory-name">Cattelan Italia</span><span class="factory-country">Венето, Италия · Обеденные группы</span></div>
+      <div class="factory-item"><span class="factory-name">Molteni&amp;C</span><span class="factory-country">Джуссано, Италия · Системы хранения</span></div>
+      <div class="factory-item"><span class="factory-name">Baxter</span><span class="factory-country">Бриандзо, Италия · Кресла и диваны</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="contact-left">
+    <div class="section-eyebrow">Связаться</div>
+    <h2 class="section-title">Обсудим ваш проект</h2>
+    <p style="color:var(--text2);font-size:14px;line-height:1.8;margin-top:16px;">Оставьте заявку — ответим в течение часа и предложим решение под ваш бюджет и задачи.</p>
+    <div class="contact-info">
+      <a href="tel:+35988XXXXXXX" class="contact-row"><span class="contact-icon">📞</span>+359 88 XXX XXXX</a>
+      <a href="https://wa.me/35988XXXXXXX" class="contact-row" target="_blank"><span class="contact-icon">💬</span>WhatsApp</a>
+      <a href="https://t.me/apstudio" class="contact-row" target="_blank"><span class="contact-icon">✈</span>Telegram</a>
+      <a href="https://instagram.com/ap.studio" class="contact-row" target="_blank"><span class="contact-icon">📷</span>@ap.studio</a>
+      <a href="mailto:info@apstudio.bg" class="contact-row"><span class="contact-icon">✉</span>info@apstudio.bg</a>
+      <a href="#" class="contact-row"><span class="contact-icon">📍</span>Варна, Болгария</a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <h3 class="form-title">Оставить заявку</h3>
+    <form id="contact-form" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Имя</label>
+          <input class="form-input" type="text" placeholder="Анна" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Телефон</label>
+          <input class="form-input" type="tel" placeholder="+359 / +38 / +7">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Тип проекта</label>
+        <select class="form-select">
+          <option>Дизайн интерьера</option>
+          <option>Ремонт под ключ</option>
+          <option>Каталог дверей</option>
+          <option>Итальянская мебель</option>
+          <option>Комплектация объекта</option>
+          <option>Другое</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Сообщение</label>
+        <textarea class="form-textarea" rows="4" placeholder="Расскажите о вашем проекте..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Отправить заявку</button>
+    </form>
+    <div id="form-success" style="display:none;padding:20px;background:var(--bg2);margin-top:16px;font-size:14px;color:var(--text2);text-align:center;">
+      ✓ Заявка отправлена! Мы свяжемся с вами в течение часа.
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">AP <span>Studio</span></div>
+  <div class="footer-links">
+    <a href="#services">Услуги</a>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#doors">Двери</a>
+    <a href="#furniture">Мебель</a>
+    <a href="#about">О нас</a>
+    <a href="#contact">Контакты</a>
+  </div>
+  <div class="footer-copy">© 2024 AP Studio · Варна, Болгария</div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;">
+  <div style="background:var(--white);padding:40px;max-width:440px;width:90%;position:relative;">
+    <button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text2);">×</button>
+    <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Запрос цены</div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:20px;" id="modal-title">Дверь</h3>
+    <input class="form-input" type="text" placeholder="Ваше имя" id="modal-name" style="margin-bottom:12px;">
+    <input class="form-input" type="tel" placeholder="Телефон или WhatsApp" id="modal-phone" style="margin-bottom:12px;">
+    <button class="btn-submit" onclick="sendRequest()">Отправить запрос</button>
+  </div>
+</div>
+
+<script>
+  // Lang switch
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Door filter
+  function filterDoors(btn, coll) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.door-card').forEach(card => {
+      if (coll === 'all' || card.dataset.coll === coll) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Modal
+  function openModal(name) {
+    document.getElementById('modal-title').textContent = name;
+    document.getElementById('modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+  function sendRequest() {
+    const name = document.getElementById('modal-name').value;
+    const phone = document.getElementById('modal-phone').value;
+    if (!name) { alert('Введите имя'); return; }
+    closeModal();
+    alert('Спасибо! Ваш запрос принят. Мы свяжемся с вами в ближайшее время.');
+  }
+
+  // Form
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  // Scroll animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-item, .adv-item, .door-card, .furniture-card, .about-stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
